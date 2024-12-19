@@ -104,9 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 customerNumber.innerText = customerCount;
             } else {
                 clearInterval(countInterval);
+                // Once the customer count is complete, start the star rating animation
+                animateStarRating();
             }
-        }, 100); // Increment every 100ms
+        }, 50); // Increment every 100ms
+    });
 
+    // Function to animate the star rating
+    function animateStarRating() {
         // Animate the star rating from 0 to 5 stars
         let stars = document.querySelectorAll('.star');
         let rating = 5; // Rating is 5 stars
@@ -119,8 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 clearInterval(starInterval);
             }
-        }, 500); // Add one star every 500ms
-    });
+        }, 1000); // Add one star every 500ms
+    }
 });
 
 
