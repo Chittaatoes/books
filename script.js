@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.getElementById("date-input");
+    const dateInput = document.querySelector('input[type="date"]');
 
     if (dateInput) {
         // Get today's date
@@ -69,22 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
         dateInput.setAttribute("min", formattedToday);
         dateInput.setAttribute("max", formattedMaxDate);
 
-        // Optional: Display placeholder text manually if the field is empty
-        dateInput.addEventListener("focus", () => {
-            dateInput.setAttribute("placeholder", "");
-        });
-
-        dateInput.addEventListener("blur", () => {
-            if (!dateInput.value) {
-                dateInput.setAttribute("placeholder", "Pilih tanggal book");
-            }
-        });
-
-        // Prevent manual input
+        // Optional: Prevent manual input
         dateInput.addEventListener("keydown", (e) => e.preventDefault());
     }
 });
-
 
 
 
