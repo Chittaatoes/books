@@ -112,6 +112,7 @@ header .icons img {
 .card-left {
     grid-row: span 2;
     display: flex;
+    max-height: 400px;
     flex-direction: column;
     justify-content: center;
 }
@@ -120,22 +121,24 @@ header .icons img {
 .card-right-bottom {
     display: flex;
     flex-direction: column;
+    max-height: 150px;
+    max-width: 250px;
     justify-content: center;
-    width: 100%;  /* Ensures both cards take full width within the column */
     border-radius: 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 15px; /* Reduced padding to fit content */
     box-sizing: border-box;
+    text-align: center; /* Ensure content is centered */
 }
 
 .card-right-top {
     /* Make the right-top card slightly more rectangular */
-    height: 250px;  /* Adjusted height */
+    height: 150px;  /* Adjusted height */
 }
 
 .card-right-bottom {
     /* Make the right-bottom card slightly more rectangular */
-    height: 250px;  /* Adjusted height */
+    height: 150px;  /* Adjusted height */
 }
 
 .card {
@@ -152,38 +155,38 @@ header .icons img {
 
 /* Header section */
 .card-header h3 {
-    font-size: 18px;
+    font-size: 16px; /* Reduced font size for better fitting */
     color: #333;
     font-weight: bold;
 }
 
 /* Customer Icon styling */
 .customer-icon {
-    font-size: 50px;
+    font-size: 35px; /* Reduced icon size */
     color: #7ab0e9;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin */
 }
 
 /* Customer count number styling */
 .customer-count {
-    font-size: 32px;
+    font-size: 24px; /* Reduced font size for the customer count */
     font-weight: bold;
     color: #333;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Icon for customer review */
 .customer-icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 40px; /* Smaller icon size */
+    height: 40px; /* Smaller icon size */
+    margin-bottom: 5px;
 }
 
 /* Star Rating */
 .star-rating {
-    font-size: 30px;
+    font-size: 20px; /* Reduced font size for stars */
     color: #ccc;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Active star color */
@@ -213,7 +216,7 @@ header .icons img {
     }
 
     .card-header h3 {
-        font-size: 16px; /* Slightly smaller font for headers */
+        font-size: 13px; /* Slightly smaller font for headers */
     }
 
     .customer-count {
@@ -221,14 +224,13 @@ header .icons img {
     }
 
     .star-rating {
-        font-size: 25px; /* Adjusted font size for star rating */
+        font-size: 18px; /* Adjusted font size for star rating */
     }
 
     .customer-icon {
         font-size: 40px; /* Slightly smaller icon for mobile */
     }
 }
-
 
 
 
