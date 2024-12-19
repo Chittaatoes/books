@@ -271,6 +271,76 @@ header .icons img {
 }
 
 
+/* Container for the facilities section */
+.fasilitas-container {
+    background-color: #f0f8ff; /* Light background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fasilitas-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for heading */
+}
+
+.fasilitas-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Centers the grid items horizontally */
+}
+
+.fasilitas-list li {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #000000; /* Dark text color */
+    display: flex;
+    flex-direction: column; /* Ensure vertical alignment of icon and text */
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+}
+
+.fasilitas-list li i {
+    margin-bottom: 10px; /* Space between icon and text */
+    color: #0856aab9; /* Blue color for icons */
+}
+
+/* Hover effect for list items */
+.fasilitas-list li:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Font Awesome icons */
+.fasilitas-list li i {
+    font-size: 24px;
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 768px) {
+    .fasilitas-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fasilitas-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+    .fasilitas-list li {
+        font-size: 14px;
+    }
+}
+
+
+
+
 
 .music-player-container {
     width: 100%;
