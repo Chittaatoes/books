@@ -1,3 +1,95 @@
+/* (Untuk Carousel Review dan Gallery) */
+const reviewTrack = document.querySelector('.carousel-track');
+const reviewSlides = Array.from(reviewTrack.children);
+let currentReviewSlideIndex = 0;
+let isReviewAnimating = false;
+
+function moveToNextReviewSlide() {
+    if (isReviewAnimating) return; // Prevent overlapping animations
+    isReviewAnimating = true;
+
+    const slideWidth = reviewSlides[0].getBoundingClientRect().width;
+
+    if (currentReviewSlideIndex === reviewSlides.length - 1) {
+        const firstReviewSlideClone = reviewSlides[0].cloneNode(true);
+        reviewTrack.appendChild(firstReviewSlideClone);
+
+        const newTransformValue = -currentReviewSlideIndex * slideWidth;
+        reviewTrack.style.transition = 'transform 0.5s ease-in-out';
+        reviewTrack.style.transform = `translateX(${newTransformValue - slideWidth}px)`;
+
+        setTimeout(() => {
+            reviewTrack.style.transition = 'none';
+            reviewTrack.style.transform = 'translateX(0)';
+            reviewTrack.removeChild(firstReviewSlideClone);
+            isReviewAnimating = false;
+        }, 500);
+
+        currentReviewSlideIndex = 0;
+    } else {
+        currentReviewSlideIndex++;
+        const newTransformValue = -currentReviewSlideIndex * slideWidth;
+        reviewTrack.style.transition = 'transform 0.5s ease-in-out';
+        reviewTrack.style.transform = `translateX(${newTransformValue}px)`;
+
+        setTimeout(() => {
+            isReviewAnimating = false;
+        }, 500);
+    }
+}
+
+// Automatically move to the next review slide every 3 seconds
+setInterval(moveToNextReviewSlide, 3000);
+
+
+
+/* JavaScript untuk Carousel Gallery: */
+const galleryTrack = document.querySelector('.customer-carousel-track');
+const gallerySlides = Array.from(galleryTrack.children);
+let currentGallerySlideIndex = 0;
+let isGalleryAnimating = false;
+
+function moveToNextGallerySlide() {
+    if (isGalleryAnimating) return; // Prevent overlapping animations
+    isGalleryAnimating = true;
+
+    const slideWidth = gallerySlides[0].getBoundingClientRect().width;
+
+    if (currentGallerySlideIndex === gallerySlides.length - 1) {
+        const firstGallerySlideClone = gallerySlides[0].cloneNode(true);
+        galleryTrack.appendChild(firstGallerySlideClone);
+
+        const newTransformValue = -currentGallerySlideIndex * slideWidth;
+        galleryTrack.style.transition = 'transform 0.5s ease-in-out';
+        galleryTrack.style.transform = `translateX(${newTransformValue - slideWidth}px)`;
+
+        setTimeout(() => {
+            galleryTrack.style.transition = 'none';
+            galleryTrack.style.transform = 'translateX(0)';
+            galleryTrack.removeChild(firstGallerySlideClone);
+            isGalleryAnimating = false;
+        }, 500);
+
+        currentGallerySlideIndex = 0;
+    } else {
+        currentGallerySlideIndex++;
+        const newTransformValue = -currentGallerySlideIndex * slideWidth;
+        galleryTrack.style.transition = 'transform 0.5s ease-in-out';
+        galleryTrack.style.transform = `translateX(${newTransformValue}px)`;
+
+        setTimeout(() => {
+            isGalleryAnimating = false;
+        }, 500);
+    }
+}
+
+// Automatically move to the next gallery slide every 3 seconds
+setInterval(moveToNextGallerySlide, 5000);
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const buttonGroup = document.querySelector(".booking-form .button-group");
     let isDragging = false;
