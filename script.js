@@ -15,6 +15,70 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const seekBar = document.getElementById('seek-bar');
+    const trackName = document.getElementById('track-name');
+    const artistName = document.getElementById('artist-name');
+    
+    // Sample songs array
+    const songs = [
+        { title: "Trauma Cover By Joel", artist: "-ELSYA ", url: "music/trauma.mp3" },
+        { title: "Menuai Resah", artist: "Alfred Chandra", url: "music/menuai.mp3" },
+        { title: "Song 3", artist: "Artist 3", url: "song3.mp3" }
+    ];
+
+    let currentSongIndex = 0;
+    let audio = new Audio(songs[currentSongIndex].url);
+
+    function loadSong() {
+        trackName.textContent = songs[currentSongIndex].title;
+        artistName.textContent = songs[currentSongIndex].artist;
+        audio.src = songs[currentSongIndex].url;
+    }
+
+    function playPause() {
+        if (audio.paused) {
+            audio.play();
+            playBtn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+        } else {
+            audio.pause();
+            playBtn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+        }
+    }
+
+    function updateSeekBar() {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        seekBar.value = progress;
+    }
+
+    playBtn.addEventListener("click", playPause);
+
+    prevBtn.addEventListener("click", function () {
+        currentSongIndex = (currentSongIndex === 0) ? songs.length - 1 : currentSongIndex - 1;
+        loadSong();
+        playPause();
+    });
+
+    nextBtn.addEventListener("click", function () {
+        currentSongIndex = (currentSongIndex === songs.length - 1) ? 0 : currentSongIndex + 1;
+        loadSong();
+        playPause();
+    });
+
+    seekBar.addEventListener("input", function () {
+        audio.currentTime = (seekBar.value / 100) * audio.duration;
+    });
+
+    audio.addEventListener("timeupdate", updateSeekBar);
+
+    loadSong(); // Initialize player with the first song
+});
+
+
 /* (Untuk Carousel Review dan Gallery) */
 const reviewTrack = document.querySelector('.carousel-track');
 const reviewSlides = Array.from(reviewTrack.children);
