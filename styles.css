@@ -279,6 +279,7 @@ header .icons img {
     margin-top: 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
 }
 
 .fasilitas-container h3 {
@@ -840,3 +841,41 @@ button.active {
     background-color: #4CAF50; /* Warna latar belakang tombol aktif */
     color: white; /* Warna teks tombol aktif */
 }
+
+
+
+
+
+
+
+
+
+
+.booking-form .submit-btn {
+    background-color: #fff;  /* White background */
+    color: #0a74da;          /* Blue text color */ 
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;      /* Increased padding for better touch/click area */
+    width: 100%;
+    border-radius: 30px;     /* Rounded corners for a more modern look */
+    cursor: pointer;
+    font-size: 18px;         /* Slightly larger font for better readability */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click transitions */
+}
+
+.booking-form .submit-btn:hover {
+    background-color: #fbfdff;  /* Lighter shade of blue for hover effect */
+    transform: scale(1.05);      /* Slight scale-up effect to make it feel interactive */
+}
+
+.booking-form .submit-btn:active {
+    background-color: #4fa7f8;  /* Darker shade of blue when button is pressed */
+    transform: scale(0.98);      /* Scale-down effect when clicked */
+}
+
+.booking-form .submit-btn:focus {
+    outline: none;              /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(10, 116, 218, 0.5);  /* Soft focus outline for accessibility */
+}
+
