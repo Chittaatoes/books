@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const openingStatus = document.getElementById("opening-status");
+    const openingHoursElement = document.querySelector(".opening-hours");
+
+    // Get the current hour
+    const currentHour = new Date().getHours();
+
+    // Check if the current time is before 9:00 AM or after 11:00 PM
+    if (currentHour < 9 || currentHour >= 23) {
+        openingStatus.textContent = "OPEN AT 09:00 AM"; // Change text to OPEN AT 09:00 AM
+        openingHoursElement.style.backgroundColor = "#f58282"; // Change background color to red
+    } else {
+        openingStatus.textContent = "OPEN, 9:00 AM - 23:00 PM"; // Keep text as OPEN
+        openingHoursElement.style.backgroundColor = "#82cbf5"; // Keep background color as blue
+    }
+});
+
 /* (Untuk Carousel Review dan Gallery) */
 const reviewTrack = document.querySelector('.carousel-track');
 const reviewSlides = Array.from(reviewTrack.children);
@@ -384,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rehearsalDropdown = document.getElementById("rehearsal-dropdown");
     const timeDropdown = document.getElementById("time-dropdown");
     const bandNameInput = document.getElementById("band-name");
-    const dateInput = document.getElementById("date-input");
+    const dateInput = document.querySelector("#date-input");
     const paxDropdown = document.querySelector("#rehearsal-form select");
 
     // Function to handle booking process
@@ -399,26 +416,43 @@ document.addEventListener("DOMContentLoaded", () => {
         const pax = paxDropdown.value;
         const selectedTimeButton = document.querySelector("#rehearsal-form .time-group button.active");
 
-        // Validate form fields
-        if (!rehearsalOption || !timeOption || !bandName || !bookingDate || !pax || !selectedTimeButton) {
-            alert("Harap isi semua bidang formulir!");
+        // Initialize error messages array
+        let errorMessages = [];
+
+        // Validate each field and push error message if any field is empty
+        if (!bandName) {
+            errorMessages.push("nama");
+        }
+        if (!bookingDate) {
+            errorMessages.push("tanggal");
+        }
+        if (!selectedTimeButton) {
+            errorMessages.push("waktu booking");
+        }
+
+        // If there are any validation errors, combine and show them
+        if (errorMessages.length > 0) {
+            let message = "Harap isi ";
+            message += errorMessages.join(", ");
+            message += " terlebih dahulu sebelum melanjutkan.";
+            alert(message);
             return;
         }
+
+        // Extract only the time part from the selected option (e.g., "1 Jam")
+        const formattedTimeOption = timeOption.split(' ')[0] + ' Jam'; // Removes price from option
 
         const bookingTime = selectedTimeButton.textContent; // Get the selected time
 
         // Format WhatsApp message
         const message = `
-Halo kak Joel, saya ingin booking studio untuk keperluan:
-*${rehearsalOption}*
-*${timeOption}*
-Untuk tanggal: ${bookingDate}
-Pada jam: ${bookingTime}
-Untuk sekitar: ${pax}
-Nama: ${bandName}
+*Halo kak Joel, saya ingin booking studio untuk ${rehearsalOption} selama ${formattedTimeOption}:*
+*Untuk tanggal: ${bookingDate}
+*Pada jam: ${bookingTime}
+*Untuk sekitar: ${pax}
+*Nama: ${bandName}
 
-Apakah waktu tersebut tersedia?
-        `;
+Apakah waktu tersebut tersedia?`;
 
         // Send message to WhatsApp
         const whatsappURL = `https://wa.me/628991601137?text=${encodeURIComponent(message)}`;
@@ -436,6 +470,7 @@ Apakah waktu tersebut tersedia?
         });
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
