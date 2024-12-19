@@ -120,7 +120,7 @@ function moveToNextReviewSlide() {
 }
 
 // Automatically move to the next review slide every 3 seconds
-setInterval(moveToNextReviewSlide, 3000);
+setInterval(moveToNextReviewSlide, 5000);
 
 
 
@@ -165,7 +165,7 @@ function moveToNextGallerySlide() {
 }
 
 // Automatically move to the next gallery slide every 3 seconds
-setInterval(moveToNextGallerySlide, 5000);
+setInterval(moveToNextGallerySlide, 8500);
 
 
 document.addEventListener("DOMContentLoaded", function () {
