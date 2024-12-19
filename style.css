@@ -1,0 +1,215 @@
+body { 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1f1f7a, #4f4fe3, #a1a1ff);
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* Horizontally centers the container */
+    align-items: center; /* Vertically centers the container */
+    height: 100vh; /* Ensures the body takes the full viewport height */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically inside the container */
+    align-items: center; /* Centers content horizontally inside the container */
+    width: 100%;
+    height: 100%; /* Full height of the viewport */
+    background: linear-gradient(135deg, #2a2a8f, #5c5cff, #b5b5ff);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.illustration {
+    width: 100%; /* Ensures the image takes up 100% width of the container */
+    height: auto;
+    margin-bottom: 30px; /* Adds space below the image */
+    filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.5));
+    animation: zoomIn 1.5s ease-out; /* Apply zoom-in animation */
+}
+
+/* New animation for a zoom-in effect with fade */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0; /* Initially invisible */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly scale up */
+        opacity: 0.8; /* Partial opacity */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFFFFF; /* Keep white for contrast */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Slightly softened shadow for a more subtle effect */
+    margin-bottom: 20px; /* Increased margin to avoid being too close to the description */
+    padding: 0 20px; /* Padding for space from edges */
+    line-height: 1.4; /* Adjust line height for readability */
+    white-space: nowrap; /* Prevent the title from wrapping */
+    font-family: 'Arial', sans-serif; /* Use the same font family as description for consistency */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px; /* Reduce font size for smaller screens */
+        line-height: 1.4;
+        white-space: normal; /* Allow wrapping of the text */
+        word-wrap: break-word; /* Ensure long words break properly */
+    }
+}
+
+.description {
+    font-size: 18px;
+    color: #D1D1D1; /* Soft gray color for better readability */
+    line-height: 1.8; /* Adjust line height for a balanced look */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow for a more subtle effect */
+    margin-bottom: 25px; /* Increased margin for more space from the title */
+    padding: 0 20px; /* Padding for space from edges */
+    max-width: 80%; /* Limit the width to improve readability */
+    margin-left: auto; /* Center the text horizontally */
+    margin-right: auto; /* Center the text horizontally */
+    font-family: 'Arial', sans-serif; /* Ensure consistent font across both elements */
+}
+
+
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ffffff; /* White text for good contrast */
+    background-color: #4f4fe3; /* Soft purple-blue background */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+}
+
+.button:hover {
+    background-color: #5c5cff; /* Lighter purple when hovered */
+    transform: scale(1.05);
+}
+
+
+header {
+    background-color: #2a2a8f;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #4f4fe3;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Container for all content */
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Card Style */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Section Styling for Services */
+.card h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #333;
+    padding: 40px;
+    text-align: center;
+}
+
+.testimonial-card {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-card h4 {
+    font-size: 22px;
+    color: #1f1f7a;
+}
+
+/* Footer */
+.footer {
+    background-color: #2a2a8f;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .testimonial-card h4 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,230 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(177, 224, 255);
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: rgb(177, 224, 255);
+    padding: 20px;
+    padding-bottom: 2px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.konten {
+    padding: 20px;
+    padding-bottom: 250px;
+    border-radius: 60px 60px 0px 0px;
+    background-color: #ffffff;
+}
+
+header .icons {
+    display: flex;
+    gap: 10px;
+}
+
+header .icons img {
+    width: 28px;
+    height: 28px;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.welcome h1 span {
+    margin-left: 8px;
+}
+
+.welcome p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Opening Hours Section */
+.opening-hours {
+    text-align: center;
+    background-color: #71abcc;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 80px;
+    width: 90%; /* Set width to 90% of the page */
+    height: 50px;
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+    transition: box-shadow 0.3s ease;
+    
+    /* Flexbox properties to center content */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+.opening-hours:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.opening-hours p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 0; /* Remove margin to keep the text centered */
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.opening-hours p strong {
+    color: #FF5733; /* Accent color for strong text */
+    font-weight: bold;
+}
+
+
+
+
+.booking-form {
+    background-color: rgb(177, 224, 255);
+    padding: 20px;
+    border-radius: 32px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Menambahkan CSS untuk memilih font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* Button Group (Rehearsal, Karaoke, Mastering) */
+.booking-form .button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Spacing between buttons */
+    margin-bottom: 15px;
+    background-color: #7ab0e9; /* Light blue background for the group */
+    padding: 10px;
+    border-radius: 50px;
+    overflow: hidden; /* Prevent content overflow */
+    position: relative;
+    user-select: none; /* Prevent text selection during drag */
+}
+
+/* Choose Your Session Title */
+.booking-form h2 {
+    font-size: 24px;
+    text-align: center;  /* Memusatkan teks */
+    margin-bottom: 30px;  /* Memberikan jarak bawah */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;  /* Membuat font lebih tebal */
+    color: #333;
+}
+
+.booking-form .button-group button {
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for button group */
+.booking-form .button-group button:hover {
+    background-color: rgba(9, 79, 160, 0.2);
+}
+
+/* Active button state for button group */
+.booking-form .button-group button.active {
+    background-color: #ffffff;
+    color: #007bff;
+}   
+
+.booking-form .time-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px;
+}
+
+.booking-form .time-group button {
+    background-color: transparent;
+    border: none;
+    border-radius: 13px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: #5b9bd5; /* Different background for time buttons */
+}
+
+/* Hover effect for time buttons */
+.booking-form .time-group button:hover {
+    background-color: rgba(0, 131, 218, 0.466);
+}
+
+/* Active button state for time buttons */
+.booking-form .time-group button.active {
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.booking-form input[type="date"] {
+    color: #555;
+}
+
+.booking-form .submit-btn {
+    background-color: #ffffff;
+    color: #0a74da;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button.active {
+    background-color: #4CAF50; /* Warna latar belakang tombol aktif */
+    color: white; /* Warna teks tombol aktif */
+}

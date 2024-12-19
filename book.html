@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hand</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="icons">
+                <img src="img/icon/menu.png" alt="Menu">
+            </div>
+            <h2>HOME</h2>
+            <div class="icons">
+                <img src="img/icon/profil.png" alt="Notifications">
+            </div>
+        </header>
+    
+        <div class="welcome">
+            <h1>Welcome <span>👋</span></h1>
+            <p>Joel Music Studio – the perfect place to bring your musical vision to life.</p>
+        </div>
+
+    </div>
+        
+        <div class="konten">
+            
+            <div class="opening-hours">
+                <p>Open, 9:00 AM - 23:00 PM</p>
+            </div>
+            <div class="booking-form">
+
+                <h2>Choose your session</h2>
+            
+                <div class="button-group">
+                    <button class="active" id="rehearsal-btn">Rehearsal</button>
+                    <button id="mastering-btn">Mastering</button>
+                </div>
+            
+                <!-- Dropdown for Rehearsal options (shown for Rehearsal only) -->
+                <select id="rehearsal-dropdown" style="display: none;">
+                    <option>Rehearsal</option>
+                    <option>Rehearsal minus one drum</option>
+                    <option>Rehearsal minus one guitar</option>
+                    <option>Karaoke</option>
+                </select>
+            
+                <!-- Dropdown for Rehearsal Time (shown for Rehearsal only) -->
+                <select id="time-dropdown" style="display: none;">
+                    <option>1 Jam (Rp 60.000)</option>
+                    <option>2 Jam (Rp 120.000)</option>
+                    <option>3 Jam (Rp 170.000)</option>
+                    <option>4 Jam (Rp 240.000)</option>
+                    <option>5 Jam (Rp 300.000)</option>
+                </select>
+            
+                <!-- Textbox for Band Name (shown for Rehearsal only) -->
+                <input type="text" id="band-name" placeholder="Nama (Band)" style="display: none;">
+                
+                <!-- Date Input -->
+                <input type="date" placeholder="Tanggal">
+            
+                <!-- Rehearsal Form (to be shown only when Rehearsal is selected) -->
+                <form id="rehearsal-form">
+                    <div class="time-group">
+                        <button>09:00</button>
+                        <button>09:30</button>
+                        <button>10:00</button>
+                        <button>10:30</button>
+                        <button>11:00</button>
+                        <button>11:30</button>
+                        <button>12:00</button>
+                        <button>12:30</button>
+                        <button>13:00</button>
+                        <button>13:30</button>
+                        <button>14:00</button>
+                        <button>14:30</button>
+                        <button>15:00</button>
+                        <button>15:30</button>
+                        <button>16:00</button>
+                        <button>16:30</button>
+                        <button>17:00</button>
+                        <button>17:30</button>
+                        <button>18:00</button>
+                        <button>18:30</button>
+                        <button>19:00</button>
+                        <button>19:30</button>
+                        <button>20:00</button>
+                        <button>20:30</button>
+                        <button>21:00</button>
+                        <button>21:30</button>
+                        <button>22:00</button>
+                        <button>22:30</button>
+                        <button>23:00</button>
+                    </div>
+            
+                    <!-- Dropdown for Group Size (only for Rehearsal) -->
+                    <select>
+                        <option>1 - 3 pax</option>
+                        <option>4 - 5 pax</option>
+                        <option>5 - 8 pax</option>
+                    </select>
+            
+                    <button type="submit" class="submit-btn">Book Now</button>
+                </form>
+            
+                <!-- Mastering Form (to be shown only when Mastering is selected) -->
+                <form id="mastering-form" style="display:none;">
+                    <!-- Textbox for Additional Info -->
+                    <input type="text" placeholder="Additional Info">
+            
+                    <!-- Dropdown for Mastering Options -->
+                    <select>
+                        <option>Take vocal (200K / 2 Jam)</option>
+                        <option>Cover Lagu Minus One (300K)</option>
+                        <option>Live Record 80K / Lagu</option>
+                        <option>Track 500K / 1 Shift (6 Jam)</option>
+                        <option>Mixing mastering 250k</option>
+                        <option>Take video 200K</option>
+                    </select>
+            
+                    <button type="submit" class="submit-btn">Book Now</button>
+                </form>
+            
+            </div>
+            
+
+                </div>
+        </div>
+        
+    <script src="script.js"></script>
+</body>
+</html>
