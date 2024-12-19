@@ -272,6 +272,156 @@ header .icons img {
 
 
 
+.music-player-container {
+    width: 100%;
+    max-width: 700px; /* Increase max width */
+    margin: 30px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, rgb(177, 224, 255) 0%, #a2c7e3 100%); /* Light blue gradient background */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensure nothing sticks out */
+    font-family: 'Arial', sans-serif;
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-header {
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.track-info p {
+    margin: 10px 0;
+    font-size: 22px; /* Increased font size for better readability */
+    font-weight: bold; /* Makes the text stand out */
+    color: #f9f9f9;
+    opacity: 0.9;
+}
+
+#track-name {
+    font-size: 26px; /* Larger size for track name */
+    font-weight: 700; /* More emphasis on track name */
+    color: #1d3557; /* Darker blue for better contrast against the background */
+}
+
+#artist-name {
+    font-size: 20px; /* Larger size for artist name */
+    color: #457b9d; /* Slightly lighter but still dark for clear contrast */
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center; /* Vertically centers the buttons */
+    width: 100%; /* Set to 100% so it occupies full space */
+    padding: 20px 0; /* Padding to give space around buttons */
+    margin-top: 10px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin: 0 20px; /* Spacing between buttons */
+}
+
+button:hover {
+    transform: scale(1.2);
+    color: rgb(177, 224, 255); /* Light blue on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+#seek-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #a2c7e3; /* Light blue bar */
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#seek-bar::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#seek-bar:hover {
+    background-color: rgb(177, 224, 255); /* Hover effect matches track name */
+}
+
+#seek-bar:focus {
+    outline: none;
+}
+
+#seek-bar::-webkit-slider-thumb:active {
+    background-color: #a2c7e3;
+}
+
+/* Hover effect for the player container */
+.music-player-container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    transition: all 0.3s ease;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+    .music-player-container {
+        padding: 15px;
+        margin: 20px auto;
+        max-width: 100%;
+    }
+
+    .player-header h3 {
+        font-size: 18px;
+    }
+
+    .track-info p {
+        font-size: 18px; /* Adjust font size for small screens */
+    }
+
+    #track-name {
+        font-size: 24px; /* Adjusted size for small screens */
+    }
+
+    #artist-name {
+        font-size: 18px; /* Adjusted size for small screens */
+    }
+
+    .player-controls button {
+        font-size: 24px;
+    }
+
+    #seek-bar {
+        height: 6px;
+    }
+}
+
+
+
+
+
 .carousel-container {
     background-color: #f9f9f9;
     padding: 20px;
