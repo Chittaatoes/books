@@ -174,5 +174,173 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const rehearsalDropdown = document.getElementById("rehearsal-dropdown");
+    const timeDropdown = document.getElementById("time-dropdown");
 
-    
+    // Data untuk setiap kategori
+    const timeOptions = {
+        rehearsal: [
+            "1 Jam (Rp 60.000)",
+            "2 Jam (Rp 120.000)",
+            "3 Jam (Rp 170.000)",
+            "4 Jam (Rp 240.000)",
+            "5 Jam (Rp 300.000)"
+        ],
+        minusOneDrum: [
+            "1 Jam (Rp 50.000)",
+            "2 Jam (Rp 100.000)",
+            "3 Jam (Rp 150.000)"
+        ],
+        minusOneGuitar: [
+            "1 Jam (Rp 50.000)",
+            "2 Jam (Rp 100.000)",
+            "3 Jam (Rp 150.000)"
+        ],
+        karaoke: [
+            "1 Jam (Rp 55.000)",
+            "2 Jam (Rp 110.000)",
+            "3 Jam (Rp 160.000)"
+        ]
+    };
+
+    // Fungsi untuk memperbarui isi dropdown waktu berdasarkan kategori
+    function updateTimeDropdown(category) {
+        timeDropdown.innerHTML = ""; // Kosongkan dropdown
+
+        if (timeOptions[category]) {
+            timeOptions[category].forEach(option => {
+                const opt = document.createElement("option");
+                opt.textContent = option;
+                timeDropdown.appendChild(opt);
+            });
+
+            timeDropdown.style.display = "block"; // Tampilkan dropdown
+        } else {
+            timeDropdown.style.display = "none"; // Sembunyikan dropdown jika tidak ada opsi
+        }
+    }
+
+    // Event listener untuk perubahan pada dropdown Rehearsal
+    rehearsalDropdown.addEventListener("change", (e) => {
+        const selectedOption = e.target.value;
+
+        switch (selectedOption) {
+            case "Rehearsal":
+                updateTimeDropdown("rehearsal");
+                break;
+            case "Rehearsal minus one drum":
+                updateTimeDropdown("minusOneDrum");
+                break;
+            case "Rehearsal minus one guitar":
+                updateTimeDropdown("minusOneGuitar");
+                break;
+            case "Karaoke":
+                updateTimeDropdown("karaoke");
+                break;
+            default:
+                timeDropdown.style.display = "none"; // Sembunyikan dropdown jika kategori tidak dikenal
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bookNowButton = document.querySelector(".submit-btn");
+    const rehearsalDropdown = document.getElementById("rehearsal-dropdown");
+    const timeDropdown = document.getElementById("time-dropdown");
+    const bandNameInput = document.getElementById("band-name");
+    const dateInput = document.getElementById("date-input");
+    const paxDropdown = document.querySelector("#rehearsal-form select");
+
+    // Function to handle booking process
+    bookNowButton.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent form submission
+
+        // Get input values
+        const rehearsalOption = rehearsalDropdown.value;
+        const timeOption = timeDropdown.value;
+        const bandName = bandNameInput.value.trim();
+        const bookingDate = dateInput.value;
+        const pax = paxDropdown.value;
+        const selectedTimeButton = document.querySelector("#rehearsal-form .time-group button.active");
+
+        // Validate form fields
+        if (!rehearsalOption || !timeOption || !bandName || !bookingDate || !pax || !selectedTimeButton) {
+            alert("Harap isi semua bidang formulir!");
+            return;
+        }
+
+        const bookingTime = selectedTimeButton.textContent; // Get the selected time
+
+        // Format WhatsApp message
+        const message = `
+Halo kak Joel, saya ingin booking studio untuk keperluan:
+*${rehearsalOption}*
+*${timeOption}*
+Untuk tanggal: ${bookingDate}
+Pada jam: ${bookingTime}
+Untuk sekitar: ${pax}
+Nama: ${bandName}
+
+Apakah waktu tersebut tersedia?
+        `;
+
+        // Send message to WhatsApp
+        const whatsappURL = `https://wa.me/628991601137?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    });
+
+    // Add event listener to time buttons
+    const timeButtons = document.querySelectorAll("#rehearsal-form .time-group button");
+    timeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Remove active class from all buttons
+            timeButtons.forEach(btn => btn.classList.remove("active"));
+            // Add active class to the clicked button
+            button.classList.add("active");
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rehearsalDropdown = document.getElementById("rehearsal-dropdown");
+    const paxDropdown = document.querySelector("#rehearsal-form select");
+
+    // Fungsi untuk mengganti isi dropdown pax berdasarkan kategori
+    function updatePaxDropdown(category) {
+        paxDropdown.innerHTML = ""; // Kosongkan dropdown
+
+        if (category === "minusOne") {
+            // Tambahkan opsi untuk minus one drum/guitar
+            const option = document.createElement("option");
+            option.textContent = "1 orang";
+            paxDropdown.appendChild(option);
+        } else {
+            // Tambahkan opsi untuk kategori lain (default)
+            ["1 - 2 orang", "3 - 5 orang", "6 - 7 orang"].forEach(optionText => {
+                const option = document.createElement("option");
+                option.textContent = optionText;
+                paxDropdown.appendChild(option);
+            });
+        }
+    }
+
+    // Event listener untuk perubahan pada dropdown Rehearsal
+    rehearsalDropdown.addEventListener("change", (e) => {
+        const selectedOption = e.target.value;
+
+        switch (selectedOption) {
+            case "Rehearsal minus one drum":
+            case "Rehearsal minus one guitar":
+                updatePaxDropdown("minusOne");
+                break;
+            default:
+                updatePaxDropdown("default");
+        }
+    });
+
+    // Panggil updatePaxDropdown untuk mengatur dropdown awal
+    updatePaxDropdown("default");
+});
