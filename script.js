@@ -88,34 +88,41 @@ setInterval(moveToNextGallerySlide, 5000);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Animate the customer count from 0 to 50+
-    let customerNumber = document.getElementById("customer-number");
-    let customerCount = 0;
-    let targetCount = 50;
-    
-    let countInterval = setInterval(function () {
-        if (customerCount < targetCount) {
-            customerCount++;
-            customerNumber.innerText = customerCount;
-        } else {
-            clearInterval(countInterval);
-        }
-    }, 100); // Increment every 100ms
+    // Select the card element
+    const card = document.querySelector('.card');
 
-    // Animate the star rating from 0 to 5 stars
-    let stars = document.querySelectorAll('.star');
-    let rating = 5; // Rating is 5 stars
-    let currentStar = 0;
+    // Wait for the fadeInUp animation to end before starting customer number and star rating animations
+    card.addEventListener('animationend', function () {
+        // Animate the customer count from 0 to 50+
+        let customerNumber = document.getElementById("customer-number");
+        let customerCount = 0;
+        let targetCount = 50;
 
-    let starInterval = setInterval(function () {
-        if (currentStar < rating) {
-            stars[currentStar].classList.add('active'); // Tambahkan kelas 'active'
-            currentStar++;
-        } else {
-            clearInterval(starInterval);
-        }
-    }, 500); // Add one star every 500ms
+        let countInterval = setInterval(function () {
+            if (customerCount < targetCount) {
+                customerCount++;
+                customerNumber.innerText = customerCount;
+            } else {
+                clearInterval(countInterval);
+            }
+        }, 100); // Increment every 100ms
+
+        // Animate the star rating from 0 to 5 stars
+        let stars = document.querySelectorAll('.star');
+        let rating = 5; // Rating is 5 stars
+        let currentStar = 0;
+
+        let starInterval = setInterval(function () {
+            if (currentStar < rating) {
+                stars[currentStar].classList.add('active'); // Add the 'active' class to make the star yellow
+                currentStar++;
+            } else {
+                clearInterval(starInterval);
+            }
+        }, 500); // Add one star every 500ms
+    });
 });
+
 
 
 
