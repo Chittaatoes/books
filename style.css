@@ -1,432 +1,215 @@
-/* General Reset */
-* {
+body { 
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: rgb(177, 224, 255);
-    color: #333;
-}
-
-header {
+    background: linear-gradient(135deg, #1f1f7a, #4f4fe3, #a1a1ff);
+    color: #ffffff;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.container {
-    background-color: rgb(177, 224, 255);
-    padding: 20px;
-    padding-bottom: 2px;
-    border-radius: 0px 0px 0px 0px;
-}
-
-.konten {
-    padding: 20px;
-    padding-bottom: 250px;
-    border-radius: 60px 60px 0px 0px;
-    background-color: #ffffff;
-}
-
-header .icons {
-    display: flex;
-    gap: 10px;
-}
-
-header .icons img {
-    width: 28px;
-    height: 28px;
+    justify-content: center; /* Horizontally centers the container */
+    align-items: center; /* Vertically centers the container */
+    height: 100vh; /* Ensures the body takes the full viewport height */
+    overflow: hidden; /* Prevents scrolling */
 }
 
 .welcome {
-    margin-bottom: 30px;
-}
-
-.welcome h1 {
-    font-size: 2rem;
     display: flex;
-    align-items: center;
-}
-
-.welcome h1 span {
-    margin-left: 8px;
-}
-
-.welcome p {
-    font-size: 1rem;
-    color: #666;
-}
-
-
-/* Opening Hours Section */
-.opening-hours {
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically inside the container */
+    align-items: center; /* Centers content horizontally inside the container */
+    width: 100%;
+    height: 100%; /* Full height of the viewport */
+    background: linear-gradient(135deg, #2a2a8f, #5c5cff, #b5b5ff);
     text-align: center;
-    background-color: #82cbf5;
-    padding: 20px;
-    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.illustration {
+    width: 100%; /* Ensures the image takes up 100% width of the container */
+    height: auto;
+    margin-bottom: 30px; /* Adds space below the image */
+    filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.5));
+    animation: zoomIn 1.5s ease-out; /* Apply zoom-in animation */
+}
+
+/* New animation for a zoom-in effect with fade */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0; /* Initially invisible */
+    }
+    50% {
+        transform: scale(1.1); /* Slightly scale up */
+        opacity: 0.8; /* Partial opacity */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFFFFF; /* Keep white for contrast */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Slightly softened shadow for a more subtle effect */
+    margin-bottom: 20px; /* Increased margin to avoid being too close to the description */
+    padding: 0 20px; /* Padding for space from edges */
+    line-height: 1.4; /* Adjust line height for readability */
+    white-space: nowrap; /* Prevent the title from wrapping */
+    font-family: 'Arial', sans-serif; /* Use the same font family as description for consistency */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px; /* Reduce font size for smaller screens */
+        line-height: 1.4;
+        white-space: normal; /* Allow wrapping of the text */
+        word-wrap: break-word; /* Ensure long words break properly */
+    }
+}
+
+.description {
+    font-size: 18px;
+    color: #D1D1D1; /* Soft gray color for better readability */
+    line-height: 1.8; /* Adjust line height for a balanced look */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow for a more subtle effect */
+    margin-bottom: 25px; /* Increased margin for more space from the title */
+    padding: 0 20px; /* Padding for space from edges */
+    max-width: 80%; /* Limit the width to improve readability */
+    margin-left: auto; /* Center the text horizontally */
+    margin-right: auto; /* Center the text horizontally */
+    font-family: 'Arial', sans-serif; /* Ensure consistent font across both elements */
+}
+
+
+
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 60px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ffffff; /* White text for good contrast */
+    background-color: #4f4fe3; /* Soft purple-blue background */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    margin-bottom: 40px;
-    width: 90%; /* Set width to 90% of the page */
-    height: 50px;
-    margin-left: auto; /* Center the element horizontally */
-    margin-right: auto; /* Center the element horizontally */
-    transition: box-shadow 0.3s ease;
-    
-    /* Flexbox properties to center content */
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
 }
 
-.opening-hours:hover {
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.opening-hours p {
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
-    margin: 0; /* Remove margin to keep the text centered */
-    line-height: 1.5;
-    text-transform: uppercase;
-}
-
-.opening-hours p strong {
-    color: #FF5733; /* Accent color for strong text */
-    font-weight: bold;
-}
-
-.carousel-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.carousel-container h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    display: flex;
-    justify-content: center; /* Center the reviews */
-    align-items: center; /* Align vertically */
-    width: 100%;
-    gap: 20px; /* Consistent gap between reviews */
-    flex-shrink: 0;
-}
-
-
-
-.review {
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 48%; /* Adjust width to reduce excessive spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .carousel-slide {
-        flex-direction: column; /* Stack reviews vertically */
-        gap: 15px; /* Smaller gap for stacked layout */
-    }
-
-    .review {
-        width: 90%; /* Full width with padding */
-    }
-}
-
-
-.review-text {
-    font-style: italic;
-    color: #555;
-}
-
-.review-rating {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.stars {
-    color: #ffc107; /* Gold color for stars */
-    font-size: 18px;
-}
-
-.rating-number {
-    margin-left: 10px;
-    font-size: 14px;
-    color: #555;
-}
-
-.review-author {
-    text-align: right;
-    font-weight: bold;
-    color: #333;
-    margin-top: 10px;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    .carousel-slide {
-        flex-direction: column; /* Stack reviews vertically */
-        align-items: center;
-    }
-
-    .review {
-        width: 90%; /* Full width with some padding on mobile */
-        margin: 10px 0; /* Add spacing between reviews */
-    }
-}
-
-/* Media query for very small screens (like phones) */
-@media (max-width: 480px) {
-    .carousel-container {
-        padding: 15px;
-    }
-
-    .carousel-container h2 {
-        font-size: 18px; /* Smaller title font */
-    }
-
-    .review {
-        padding: 10px;
-    }
-
-    .review-text {
-        font-size: 14px;
-    }
-
-    .stars {
-        font-size: 16px;
-    }
-
-    .rating-number {
-        font-size: 12px;
-    }
-
-    .review-author {
-        font-size: 14px;
-    }
-}
-
-
-
-/* Container untuk galeri pelanggan */
-.customer-gallery-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 1200px;
-    text-align: center;
-}
-
-/* Judul galeri pelanggan */
-.customer-gallery-container h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Carousel pelanggan */
-.customer-carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Track untuk slide pelanggan */
-.customer-carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Setiap slide carousel pelanggan */
-.customer-carousel-slide {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2 kolom per baris */
-    grid-template-rows: repeat(2, auto);    /* 2 baris per slide */
-    gap: 20px;
-    width: 100%;
-    flex-shrink: 0;
-}
-
-/* Item galeri pelanggan */
-.customer-gallery-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.customer-gallery-item:hover {
+.button:hover {
+    background-color: #5c5cff; /* Lighter purple when hovered */
     transform: scale(1.05);
 }
 
-/* Gambar dalam item galeri pelanggan */
-.customer-gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
 
-/* Deskripsi di bawah gambar */
-.customer-gallery-item p {
-    font-size: 14px;
-    color: #555;
-    padding: 10px;
-    background-color: #f4f4f4;
-    margin: 0;
-}
-
-
-.booking-form {
-    background-color: rgb(177, 224, 255);
+header {
+    background-color: #2a2a8f;
     padding: 20px;
-    border-radius: 32px;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    text-align: center;
 }
 
-/* Menambahkan CSS untuk memilih font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+header h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
 
-
-/* Button Group (Rehearsal, Karaoke, Mastering) */
-.booking-form .button-group {
+nav {
     display: flex;
-    justify-content: flex-start;
-    gap: 10px; /* Spacing between buttons */
-    margin-bottom: 15px;
-    background-color: #7ab0e9; /* Light blue background for the group */
-    padding: 10px;
-    border-radius: 50px;
-    overflow: hidden; /* Prevent content overflow */
-    position: relative;
-    user-select: none; /* Prevent text selection during drag */
+    justify-content: center;
+    background: #4f4fe3;
+    padding: 10px 0;
 }
 
-/* Choose Your Session Title */
-.booking-form h2 {
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Container for all content */
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Card Style */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Section Styling for Services */
+.card h3 {
     font-size: 24px;
-    text-align: center;  /* Memusatkan teks */
-    margin-bottom: 30px;  /* Memberikan jarak bawah */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;  /* Membuat font lebih tebal */
     color: #333;
 }
 
-.booking-form .button-group button {
-    flex-shrink: 0; /* Prevent buttons from shrinking */
-    background-color: transparent;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #ffffff;
-    font-weight: bold;
-    transition: all 0.3s ease;
+.card p {
+    color: #666;
 }
 
-/* Hover effect for button group */
-.booking-form .button-group button:hover {
-    background-color: rgba(9, 79, 160, 0.2);
+/* Testimonials Section */
+.testimonials {
+    background-color: #333;
+    padding: 40px;
+    text-align: center;
 }
 
-/* Active button state for button group */
-.booking-form .button-group button.active {
-    background-color: #ffffff;
-    color: #007bff;
-}   
-
-.booking-form .time-group {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-    gap: 10px; /* Space between buttons */
-    margin-bottom: 20px;
+.testimonial-card {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.booking-form .time-group button {
-    background-color: transparent;
-    border: none;
-    border-radius: 13px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #ffffff;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    background-color: #5b9bd5; /* Different background for time buttons */
+.testimonial-card h4 {
+    font-size: 22px;
+    color: #1f1f7a;
 }
 
-/* Hover effect for time buttons */
-.booking-form .time-group button:hover {
-    background-color: rgba(0, 131, 218, 0.466);
+/* Footer */
+.footer {
+    background-color: #2a2a8f;
+    padding: 20px;
+    text-align: center;
+    color: white;
 }
 
-/* Active button state for time buttons */
-.booking-form .time-group button.active {
-    background-color: #ffffff;
-    color: #007bff;
-}
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
 
+    nav a {
+        font-size: 16px;
+    }
 
+    .card h3 {
+        font-size: 20px;
+    }
 
-.booking-form input,
-.booking-form select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-.booking-form input[type="date"] {
-    color: #555;
-}
-
-.booking-form .submit-btn {
-    background-color: #ffffff;
-    color: #0a74da;
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button.active {
-    background-color: #4CAF50; /* Warna latar belakang tombol aktif */
-    color: white; /* Warna teks tombol aktif */
+    .testimonial-card h4 {
+        font-size: 18px;
+    }
 }
