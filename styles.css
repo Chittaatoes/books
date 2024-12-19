@@ -101,6 +101,137 @@ header .icons img {
     font-weight: bold;
 }
 
+.group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Keep two columns layout */
+    grid-gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-left {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-right-top,
+.card-right-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;  /* Ensures both cards take full width within the column */
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-right-top {
+    /* Make the right-top card slightly more rectangular */
+    height: 250px;  /* Adjusted height */
+}
+
+.card-right-bottom {
+    /* Make the right-bottom card slightly more rectangular */
+    height: 250px;  /* Adjusted height */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 40px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Header section */
+.card-header h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Customer Icon styling */
+.customer-icon {
+    font-size: 50px;
+    color: #7ab0e9;
+    margin-bottom: 10px;
+}
+
+/* Customer count number styling */
+.customer-count {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Icon for customer review */
+.customer-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Star Rating */
+.star-rating {
+    font-size: 30px;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* Active star color */
+.star-rating .active {
+    color: #ffc107;
+}
+
+@keyframes star-anim {
+    0% {
+        color: #ccc;
+    }
+    100% {
+        color: #ffc107;
+    }
+}
+
+/* Maintain layout on mobile - Two columns */
+@media screen and (max-width: 600px) {
+    .group {
+        grid-template-columns: 1fr 1fr; /* Keep two columns on mobile */
+        grid-gap: 15px; /* Reduced gap for small screens */
+    }
+
+    .card {
+        width: 100%; /* Full width for cards */
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .card-header h3 {
+        font-size: 16px; /* Slightly smaller font for headers */
+    }
+
+    .customer-count {
+        font-size: 28px; /* Adjusted font size */
+    }
+
+    .star-rating {
+        font-size: 25px; /* Adjusted font size for star rating */
+    }
+
+    .customer-icon {
+        font-size: 40px; /* Slightly smaller icon for mobile */
+    }
+}
+
+
+
+
 .carousel-container {
     background-color: #f9f9f9;
     padding: 20px;
