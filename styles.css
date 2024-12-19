@@ -327,7 +327,7 @@ header .icons img {
     margin-top: 10px;
 }
 
-button {
+.player-controls button {
     background-color: transparent;
     border: none;
     font-size: 30px;
