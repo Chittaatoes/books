@@ -16,6 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// JavaScript to handle hiding/showing the time group based on date selection
+document.getElementById("date-input").addEventListener("change", function() {
+    const timeGroup = document.getElementById("time-group");
+    const selectedDate = this.value; // Get the selected date
+
+    if (selectedDate) {
+        // Show the time group when a date is selected
+        timeGroup.style.display = "grid";
+    } else {
+        // Hide the time group if no date is selected
+        timeGroup.style.display = "none";
+    }
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const playBtn = document.getElementById('play-btn');
     const prevBtn = document.getElementById('prev-btn');
