@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
 
             // Hapus kelas "active" dari semua tombol waktu
-            timeButto   ns.forEach((btn) => btn.classList.remove("active"));
+            timeButtons.forEach((btn) => btn.classList.remove("active"));
             
             // Tambahkan kelas "active" pada tombol yang dipilih
             this.classList.add("active");
