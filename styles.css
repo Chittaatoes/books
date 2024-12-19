@@ -107,12 +107,14 @@ header .icons img {
     grid-gap: 20px;
     max-width: 800px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 .card-left {
     grid-row: span 2;
     display: flex;
     max-height: 400px;
+    gap: 25px;
     flex-direction: column;
     justify-content: center;
 }
@@ -141,6 +143,7 @@ header .icons img {
     height: 150px;  /* Adjusted height */
 }
 
+/* Apply animation to all cards */
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -151,9 +154,43 @@ header .icons img {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start with a slight downward position */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply animation */
 }
 
+/* Animation to fade-in and slide-up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+/* To apply animation to the entire group when loaded */
+.group .card {
+    animation-delay: 0.5s; /* Delay to stagger animation for each card */
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .group .card {
+        animation-delay: 0.3s; /* Adjust the delay for mobile */
+    }
+}
+
+
 /* Header section */
+.card-header h2 {
+    font-size: 20px; /* Reduced font size for better fitting */
+    color: #333;
+    font-weight: bold;
+}
+
 .card-header h3 {
     font-size: 16px; /* Reduced font size for better fitting */
     color: #333;
