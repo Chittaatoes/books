@@ -306,20 +306,29 @@ Apakah waktu tersebut tersedia?
 
 document.addEventListener("DOMContentLoaded", () => {
     const rehearsalDropdown = document.getElementById("rehearsal-dropdown");
-    const paxDropdown = document.querySelector("#rehearsal-form select");
+    const paxDropdown = document.querySelector("#rehearsal-form select"); // Dropdown untuk jumlah orang
 
-    // Fungsi untuk mengganti isi dropdown pax berdasarkan kategori
+    // Fungsi untuk memperbarui isi dropdown pax
     function updatePaxDropdown(category) {
         paxDropdown.innerHTML = ""; // Kosongkan dropdown
 
-        if (category === "minusOne") {
-            // Tambahkan opsi untuk minus one drum/guitar
+        if (category === "Rehearsal minus one drum" || category === "Rehearsal minus one guitar") {
+            // Opsi khusus untuk "minus one drum" atau "minus one guitar"
             const option = document.createElement("option");
             option.textContent = "1 orang";
             paxDropdown.appendChild(option);
+        } else if (category === "Karaoke") {
+            // Opsi khusus untuk "Karaoke" (tanpa opsi 6-7 orang)
+            const options = ["1 - 2 orang", "3 - 5 orang"];
+            options.forEach(optionText => {
+                const option = document.createElement("option");
+                option.textContent = optionText;
+                paxDropdown.appendChild(option);
+            });
         } else {
-            // Tambahkan opsi untuk kategori lain (default)
-            ["1 - 2 orang", "3 - 5 orang", "6 - 7 orang"].forEach(optionText => {
+            // Default opsi untuk kategori lainnya
+            const options = ["1 - 2 orang", "3 - 5 orang", "6 - 7 orang"];
+            options.forEach(optionText => {
                 const option = document.createElement("option");
                 option.textContent = optionText;
                 paxDropdown.appendChild(option);
@@ -334,13 +343,13 @@ document.addEventListener("DOMContentLoaded", () => {
         switch (selectedOption) {
             case "Rehearsal minus one drum":
             case "Rehearsal minus one guitar":
-                updatePaxDropdown("minusOne");
+                updatePaxDropdown(selectedOption);
+                break;
+            case "Karaoke":
+                updatePaxDropdown("Karaoke");
                 break;
             default:
                 updatePaxDropdown("default");
         }
     });
-
-    // Panggil updatePaxDropdown untuk mengatur dropdown awal
-    updatePaxDropdown("default");
 });
