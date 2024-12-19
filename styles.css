@@ -65,12 +65,12 @@ header .icons img {
 /* Opening Hours Section */
 .opening-hours {
     text-align: center;
-    background-color: #71abcc;
+    background-color: #82cbf5;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     width: 90%; /* Set width to 90% of the page */
     height: 50px;
     margin-left: auto; /* Center the element horizontally */
@@ -101,7 +101,209 @@ header .icons img {
     font-weight: bold;
 }
 
+.carousel-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+}
 
+.carousel-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    display: flex;
+    justify-content: center; /* Center the reviews */
+    align-items: center; /* Align vertically */
+    width: 100%;
+    gap: 20px; /* Consistent gap between reviews */
+    flex-shrink: 0;
+}
+
+
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 48%; /* Adjust width to reduce excessive spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex-direction: column; /* Stack reviews vertically */
+        gap: 15px; /* Smaller gap for stacked layout */
+    }
+
+    .review {
+        width: 90%; /* Full width with padding */
+    }
+}
+
+
+.review-text {
+    font-style: italic;
+    color: #555;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.stars {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 18px;
+}
+
+.rating-number {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.review-author {
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex-direction: column; /* Stack reviews vertically */
+        align-items: center;
+    }
+
+    .review {
+        width: 90%; /* Full width with some padding on mobile */
+        margin: 10px 0; /* Add spacing between reviews */
+    }
+}
+
+/* Media query for very small screens (like phones) */
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: 15px;
+    }
+
+    .carousel-container h2 {
+        font-size: 18px; /* Smaller title font */
+    }
+
+    .review {
+        padding: 10px;
+    }
+
+    .review-text {
+        font-size: 14px;
+    }
+
+    .stars {
+        font-size: 16px;
+    }
+
+    .rating-number {
+        font-size: 12px;
+    }
+
+    .review-author {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Container untuk galeri pelanggan */
+.customer-gallery-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Judul galeri pelanggan */
+.customer-gallery-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Carousel pelanggan */
+.customer-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track untuk slide pelanggan */
+.customer-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Setiap slide carousel pelanggan */
+.customer-carousel-slide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 kolom per baris */
+    grid-template-rows: repeat(2, auto);    /* 2 baris per slide */
+    gap: 20px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Item galeri pelanggan */
+.customer-gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.customer-gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Gambar dalam item galeri pelanggan */
+.customer-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Deskripsi di bawah gambar */
+.customer-gallery-item p {
+    font-size: 14px;
+    color: #555;
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin: 0;
+}
 
 
 .booking-form {
@@ -109,8 +311,8 @@ header .icons img {
     padding: 20px;
     border-radius: 32px;
     margin-top: 10px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /* Menambahkan CSS untuk memilih font */
@@ -204,7 +406,7 @@ header .icons img {
     margin-bottom: 15px;
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 14px;
 }
 
