@@ -91,15 +91,22 @@
                 </div>
             </div>
 
+            <section class="hero-section">
+                <h1 class="hero-title">Udah capek cari studio musik yang harga pas di kantong?</h1>
+                <p class="hero-text">Di Joel Music Studio, kami menawarkan kualitas rekaman profesional dengan harga yang terjangkau. Bawa musikmu ke level berikutnya di studio kami yang nyaman dan siap mendukungmu.</p>
+                <a href="#booking" class="cta-button">Pelajari Lebih Lanjut</a>
+            </section>
+
             <div class="fasilitas-container">
                 <h3>Fasilitas yang Didapat</h3>
                 <ul class="fasilitas-list">
                     <li><i class="fa fa-drum"></i> Drum Elektrik</li>
-                    <li><i class="fa fa-music"></i> Tamborin</li> <!-- Tamborin icon -->
                     <li><i class="fa fa-keyboard"></i> Keyboard</li>
+                    <li><i class="fa fa-guitar"></i> Gitar 1</li>
                     <li><i class="fa fa-guitar"></i> Gitar 2</li>
                     <li><i class="fa fa-guitar"></i> Bass</li>
                     <li><i class="fa fa-drum"></i> Cajon</li> <!-- Cajon icon -->
+                    <li><i class="fa fa-music"></i> Tamborin</li> <!-- Tamborin icon -->
                     <li><i class="fa fa-toilet"></i> Toilet</li>
                     <li><i class="fa fa-building"></i> AC</li>
                     <li><i class="fa fa-glass-cheers"></i> Free Drinks</li>
@@ -414,124 +421,223 @@
             
             
             
-            
-
-            <div class="booking-form">
-                <h2>Choose your session</h2>
-                <div class="button-group">
-                    <button class="active" id="rehearsal-btn">Rehearsal</button>
-                    <button id="mastering-btn">Mastering</button>
-                </div>
-            
-                <!-- Dropdown for Rehearsal options (shown for Rehearsal only) -->
-                <select id="rehearsal-dropdown" style="display: none;">
-                    <option>Rehearsal</option>
-                    <option>Rehearsal minus one drum</option>
-                    <option>Rehearsal minus one guitar</option>
-                    <option>Karaoke</option>
-                </select>
-            
-                <!-- Dropdown for Rehearsal Time (shown for Rehearsal only) -->
-                <select id="time-dropdown" style="display: none;">
-                    <option>1 Jam (Rp 60.000)</option>
-                    <option>2 Jam (Rp 120.000)</option>
-                    <option>3 Jam (Rp 170.000)</option>
-                    <option>4 Jam (Rp 240.000)</option>
-                    <option>5 Jam (Rp 300.000)</option>
-                </select>
-
-                <!-- Dropdown minusone drum (shown for minus one drum only) -->
-                <select id="time-dropdown" style="display: none;">
-                    <option>1 Jam (Rp 50.000)</option>
-                    <option>2 Jam (Rp 100.000)</option>
-                    <option>3 Jam (Rp 150.000)</option>
-                </select>
-
-                <!-- Dropdown minusone gitar (shown for minus one gitar only) -->
-                <select id="time-dropdown" style="display: none;">
-                    <option>1 Jam (Rp 50.000)</option>
-                    <option>2 Jam (Rp 100.000)</option>
-                    <option>3 Jam (Rp 150.000)</option>
-                </select>
-        
-                <!-- Dropdown karaoke (shown for karaoke only) -->
-                <select id="time-dropdown" style="display: none;">
-                    <option>1 Jam (Rp 55.000)</option>
-                    <option>2 Jam (Rp 110.000)</option>
-                    <option>3 Jam (Rp 160.000)</option>
-                </select>
-
-                <!-- Textbox for Band Name (shown for Rehearsal only) -->
-                <input type="text" id="band-name" placeholder="Nama (Band)" style="display: none;">
-                
-                <h4>pick your date</h4>
-
-                <!-- Date Input -->
-                <input type="date" id="date-input" placeholder="Pilih tanggal book">
-            
-                <!-- Rehearsal Form (to be shown only when Rehearsal is selected) -->
-                <form id="rehearsal-form">
-                    <div class="time-group" id="time-group" style="display: none;">
-                        <button>09:00</button>
-                        <button>09:30</button>
-                        <button>10:00</button>
-                        <button>10:30</button>
-                        <button>11:00</button>
-                        <button>11:30</button>
-                        <button>12:00</button>
-                        <button>12:30</button>
-                        <button>13:00</button>
-                        <button>13:30</button>
-                        <button>14:00</button>
-                        <button>14:30</button>
-                        <button>15:00</button>
-                        <button>15:30</button>
-                        <button>16:00</button>
-                        <button>16:30</button>
-                        <button>17:00</button>
-                        <button>17:30</button>
-                        <button>18:00</button>
-                        <button>18:30</button>
-                        <button>19:00</button>
-                        <button>19:30</button>
-                        <button>20:00</button>
-                        <button>20:30</button>
-                        <button>21:00</button>
-                        <button>21:30</button>
-                        <button>22:00</button>
-                        <button>22:30</button>
-                        <button>23:00</button>
-                    </div>
-            
-                    <!-- Dropdown for Group Size (only for Rehearsal) -->
-                    <select>
-                        <option>1 - 2 orang</option>
-                        <option>3 - 5 orang</option>
-                        <option>6 - 7 orang</option>
-                    </select>
-            
-                    <button type="submit" class="submit-btn">Book Now</button>
-                </form>
-            
-                <!-- Mastering Form (to be shown only when Mastering is selected) -->
-                <form id="mastering-form" style="display:none;">
-                    <!-- Textbox for Additional Info -->
-                    <input type="text" placeholder="Additional Info">
-            
-                    <!-- Dropdown for Mastering Options -->
-                    <select>
-                        <option>Take vocal (200K / 2 Jam)</option>
-                        <option>Cover Lagu Minus One (300K)</option>
-                        <option>Live Record 80K / Lagu</option>
-                        <option>Track 500K / 1 Shift (6 Jam)</option>
-                        <option>Mixing mastering 250k</option>
-                        <option>Take video 200K</option>
-                    </select>
-            
-                    <button type="submit" class="submit-btn">Book Now</button>
-                </form>
+            <div class="pricing-table">
+                <h3>Price List</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Layanan</th>
+                            <th>Durasi</th>
+                            <th>Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rehearsal</td>
+                            <td>/ Jam</td>
+                            <td>Rp60.000</td>
+                        </tr>
+                        <tr>
+                            <td>Minus One Drum</td>
+                            <td>/ Jam</td>
+                            <td>Rp50.000</td>
+                        </tr>
+                        <tr>
+                            <td>Minus One Gitar</td>
+                            <td>/ Jam</td>
+                            <td>Rp50.000</td>
+                        </tr>
+                        <tr>
+                            <td>Karaoke</td>
+                            <td>/ Jam</td>
+                            <td>Rp55.000</td>
+                        </tr>
+                        <tr>
+                            <td>Take Vocal</td>
+                            <td>/ 2 Jam</td>
+                            <td>Rp200.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cover Lagu Minusone</td>
+                            <td>One Session</td>
+                            <td>Rp300.000</td>
+                        </tr>
+                        <tr>
+                            <td>Live Record</td>
+                            <td>/ Song</td>
+                            <td>Rp80.000</td>
+                        </tr>
+                        <tr>
+                            <td>Track</td>
+                            <td>/ Shift <hr>(6 Jam)</td>
+                            <td>Rp500.000</td>
+                        </tr>
+                        <tr>
+                            <td>Mixing Mastering</td>
+                            <td>/ Song</td>
+                            <td>Rp250.000</td>
+                        </tr>
+                        <tr>
+                            <td>Take Video</td>
+                            <td>/ Session</td>
+                            <td>Rp200.000</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            
+
+                    <div class="booking-form">
+                        <h2>Choose your session</h2>
+                        <div class="button-group">
+                            <button class="active" id="rehearsal-btn">Rehearsal</button>
+                            <button id="mastering-btn">Mastering</button>
+                        </div>
+                    
+                        <!-- Dropdown for Rehearsal options (shown for Rehearsal only) -->
+                        <select id="rehearsal-dropdown" style="display: none;">
+                            <option>Rehearsal</option>
+                            <option>Rehearsal minus one drum</option>
+                            <option>Rehearsal minus one guitar</option>
+                            <option>Karaoke</option>
+                        </select>
+                    
+                        <!-- Dropdown for Rehearsal Time (shown for Rehearsal only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 60.000)</option>
+                            <option>2 Jam (Rp 120.000)</option>
+                            <option>3 Jam (Rp 170.000)</option>
+                            <option>4 Jam (Rp 240.000)</option>
+                            <option>5 Jam (Rp 300.000)</option>
+                        </select>
+
+                        <!-- Dropdown minusone drum (shown for minus one drum only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 50.000)</option>
+                            <option>2 Jam (Rp 100.000)</option>
+                            <option>3 Jam (Rp 150.000)</option>
+                        </select>
+
+                        <!-- Dropdown minusone gitar (shown for minus one gitar only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 50.000)</option>
+                            <option>2 Jam (Rp 100.000)</option>
+                            <option>3 Jam (Rp 150.000)</option>
+                        </select>
+                
+                        <!-- Dropdown karaoke (shown for karaoke only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 55.000)</option>
+                            <option>2 Jam (Rp 110.000)</option>
+                            <option>3 Jam (Rp 160.000)</option>
+                        </select>
+
+                        <!-- Textbox for Band Name (shown for Rehearsal only) -->
+                        <input type="text" id="band-name" placeholder="Nama (Band)" style="display: none;">
+                        
+                        <h4>pick your date</h4>
+
+                        <!-- Date Input -->
+                        <input type="date" id="date-input" placeholder="Pilih tanggal book">
+                    
+                        <!-- Rehearsal Form (to be shown only when Rehearsal is selected) -->
+                        <form id="rehearsal-form">
+                            <div class="time-group" id="time-group" style="display: none;">
+                                <button>09:00</button>
+                                <button>09:30</button>
+                                <button>10:00</button>
+                                <button>10:30</button>
+                                <button>11:00</button>
+                                <button>11:30</button>
+                                <button>12:00</button>
+                                <button>12:30</button>
+                                <button>13:00</button>
+                                <button>13:30</button>
+                                <button>14:00</button>
+                                <button>14:30</button>
+                                <button>15:00</button>
+                                <button>15:30</button>
+                                <button>16:00</button>
+                                <button>16:30</button>
+                                <button>17:00</button>
+                                <button>17:30</button>
+                                <button>18:00</button>
+                                <button>18:30</button>
+                                <button>19:00</button>
+                                <button>19:30</button>
+                                <button>20:00</button>
+                                <button>20:30</button>
+                                <button>21:00</button>
+                                <button>21:30</button>
+                                <button>22:00</button>
+                                <button>22:30</button>
+                                <button>23:00</button>
+                            </div>
+                    
+                            <!-- Dropdown for Group Size (only for Rehearsal) -->
+                            <select>
+                                <option>1 - 2 orang</option>
+                                <option>3 - 5 orang</option>
+                                <option>6 - 7 orang</option>
+                            </select>
+                    
+                            <button type="submit" class="submit-btn">Book Now</button>
+                        </form>
+                    
+                        <!-- Mastering Form (to be shown only when Mastering is selected) -->
+                        <form id="mastering-form" style="display:none;">
+                            <!-- Textbox for Additional Info -->
+                            <input type="text" placeholder="Additional Info">
+                    
+                            <!-- Dropdown for Mastering Options -->
+                            <select>
+                                <option>Take vocal (200K / 2 Jam)</option>
+                                <option>Cover Lagu Minus One (300K)</option>
+                                <option>Live Record 80K / Lagu</option>
+                                <option>Track 500K / 1 Shift (6 Jam)</option>
+                                <option>Mixing mastering 250k</option>
+                                <option>Take video 200K</option>
+                            </select>
+                    
+                            <button type="submit" class="submit-btn">Book Now</button>
+                        </form>
+                    </div>
+
+
+                    <!-- HTML -->
+                    <div class="equipment-marketplace">
+                        <div class="equipment-item">
+                            <i class="fa fa-plug" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Kabel</p>
+                            <p class="equipment-item-price">Rp 50.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-drum" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Drum Nux DM7</p>
+                            <p class="equipment-item-price">Rp 500.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-guitar" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Efek Gitar Joyo Gembox 2G</p>
+                            <p class="equipment-item-price">Rp 200.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-guitar" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Efek Gitar Vox Stomplab 2G</p>
+                            <p class="equipment-item-price">Rp 200.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                    </div>
+
+
+                    
+                    
         </div>
+
+        
         
     <script src="script.js"></script>
 </body>
