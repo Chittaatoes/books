@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 clearInterval(starInterval);
             }
-        }, 1000); // Add one star every 500ms
+        }, 500); // Add one star every 500ms
     }
 });
 
