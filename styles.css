@@ -843,10 +843,244 @@ button.active {
 }
 
 
+.equipment-rental h3{
+    color: #333;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;  
+}
+
+.equipment-marketplace {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.equipment-item {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1; /* Membuat ukuran 1:1 */
+}
+
+.equipment-item:hover {
+    transform: scale(1.05);
+}
+
+.equipment-item i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.equipment-item-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.equipment-item-price {
+    font-size: 1em;
+    color: #000000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.rent-now-btn {
+    display: block;
+    background: #ff9500;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    margin: 10px auto 0;
+    text-decoration: none;
+    transition: background 0.3s;
+    width: 80%;
+}
+
+.rent-now-btn:hover {
+    background: #e68a00;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .equipment-marketplace {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+
+    .equipment-item {
+        aspect-ratio: 1 / 2; /* Ukuran tetap 1:1 untuk layar kecil */
+    }
+
+    .equipment-item i {
+        font-size: 1.8em; /* Icon lebih kecil */
+    }
+
+    .equipment-item-name {
+        font-size: 24px; /* Nama item lebih kecil */
+    }
+
+    .equipment-item-price {
+        font-size: 0.6em; /* Harga lebih kecil */
+        padding: 4px 12px;
+    }
+
+    .rent-now-btn {
+        font-size: 2px; /* Tombol lebih kecil */
+        padding: 1px 3px; /* Adjusted padding for mobile */
+        width: 70%; /* Increased width for better touch area */
+        height: 30px;
+    }
+}
 
 
 
 
+
+
+.pricing-table h3 {
+        color: #333;
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    
+}
+
+/* Pricing Table */
+.pricing-table {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.pricing-table th, .pricing-table td {
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+}
+
+.pricing-table th {
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.pricing-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.pricing-table tr:hover {
+    background: #f1f1f1;
+    transition: background 0.3s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .equipment-rental, .pricing-table {
+        padding: 15px;
+    }
+
+    .pricing-table th, .pricing-table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .rent-now-btn {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+
+
+
+.hero-section {
+    background: white; /* #f2f2f2 */
+    color: #333;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    font-size: 1.2em;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    position: relative;
+}
+
+.hero-title {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: none;
+    line-height: 1.4;
+}
+
+.hero-text {
+    font-size: 1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8em;
+    }
+
+    .hero-text {
+        font-size: 1em;
+        padding: 0 15px;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
 
 
 
