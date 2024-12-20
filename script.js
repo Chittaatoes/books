@@ -180,7 +180,7 @@ function moveToNextGallerySlide() {
 }
 
 // Automatically move to the next gallery slide every 3 seconds
-setInterval(moveToNextGallerySlide, 8500);
+setInterval(moveToNextGallerySlide, 3500);
 
 
 document.addEventListener("DOMContentLoaded", function () {
