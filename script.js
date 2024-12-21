@@ -1,18 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const ctaButton = document.querySelector(".cta-button");
-    const fasilitasContainer = document.querySelector(".fasilitas-container");
-
-    ctaButton.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-
-        // Scroll to fasilitas-container and center it
-        fasilitasContainer.scrollIntoView({
-            behavior: "smooth", // Smooth scrolling
-            block: "center",    // Vertically center
-            inline: "center"    // Horizontally center (if needed)
-        });
-    });
-});
 
 
 document.addEventListener("DOMContentLoaded", () => {
