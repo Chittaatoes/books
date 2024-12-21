@@ -1044,23 +1044,24 @@ button.active {
 
 
 .hero-section {
-    background: white; /* #f2f2f2 */
+    background: white;
     color: #333;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 100px;
+    padding: 20px 10px 100px;
     font-size: 1.2em;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     position: relative;
 }
 
 .illustration {
-    margin-bottom: 30px; /* Adds space below the image */
-    filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.5));
-    animation: zoomIn 1.5s ease-out; /* Apply zoom-in animation */
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto 30px; /* Center-aligns the image and adds bottom spacing */
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    animation: zoomIn 1.5s ease-out;
 }
 
-/* New animation for a zoom-in effect with fade */
+/* Animation for zoom-in effect with fade */
 @keyframes zoomIn {
     0% {
         transform: scale(0.8); /* Start smaller */
@@ -1080,10 +1081,8 @@ button.active {
     font-size: 2.2em;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #FFFFFF; /* Keep white for contrast */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Slightly softened shadow for a more subtle effect */
     color: #333;
-    text-transform: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     line-height: 1.4;
 }
 
@@ -1112,14 +1111,8 @@ button.active {
     background-color: #0056b3;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-    .illustration {
-        width: 80%; /* Ensures the image takes up 100% width of the container */
-        height: auto;
-        margin-bottom: 30px; /* Adds space below the image */
-        filter: drop-shadow(0 4px 6px rgba(5, 65, 156, 0.795));
-        animation: zoomIn 1.5s ease-out; /* Apply zoom-in animation */
-    }
     .hero-title {
         font-size: 1.8em;
     }
@@ -1134,6 +1127,7 @@ button.active {
         padding: 10px 20px;
     }
 }
+
 
 
 
