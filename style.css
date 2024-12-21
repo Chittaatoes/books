@@ -1055,7 +1055,7 @@ button.active {
 }
 
 .illustration {
-    width: 100%; /* Ensures the image takes up 100% width of the container */
+    width: 80%; /* Ensures the image takes up 100% width of the container */
     height: auto;
     margin-bottom: 30px; /* Adds space below the image */
     filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.5));
