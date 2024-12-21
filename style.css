@@ -1114,7 +1114,7 @@ button.active {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .hero-title {
-        font-size: 1.8em;
+        font-size: 1.3em;
     }
 
     .hero-text {
