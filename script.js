@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const ctaButton = document.querySelector(".cta-button");
+    const fasilitasContainer = document.querySelector(".fasilitas-container");
+
+    ctaButton.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        // Scroll to fasilitas-container and center it
+        fasilitasContainer.scrollIntoView({
+            behavior: "smooth", // Smooth scrolling
+            block: "center",    // Vertically center
+            inline: "center"    // Horizontally center (if needed)
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
     const openingStatus = document.getElementById("opening-status");
     const openingHoursElement = document.querySelector(".opening-hours");
 
@@ -483,6 +500,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateInput = document.querySelector("#date-input");
     const paxDropdown = document.querySelector("#rehearsal-form select");
 
+    // Helper function to format date
+    function formatDate(dateString) {
+        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const [year, month, day] = dateString.split("-");
+        return `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
+    }
+
     // Function to handle booking process
     bookNowButton.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent form submission
@@ -522,11 +546,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const formattedTimeOption = timeOption.split(' ')[0] + ' Jam'; // Removes price from option
 
         const bookingTime = selectedTimeButton.textContent; // Get the selected time
+        const formattedDate = formatDate(bookingDate); // Format the date
 
         // Format WhatsApp message
         const message = `
 *Halo kak Joel, saya ingin booking studio untuk ${rehearsalOption} selama ${formattedTimeOption}:*
-*Untuk tanggal: ${bookingDate}
+*Untuk tanggal: ${formattedDate}
 *Pada jam: ${bookingTime}
 *Untuk sekitar: ${pax}
 *Nama: ${bandName}
@@ -549,6 +574,125 @@ Apakah waktu tersebut tersedia?`;
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const masteringForm = document.getElementById("mastering-form");
+    const masteringDropdown = masteringForm.querySelector("select");
+    const noteInput = masteringForm.querySelector("input[type='text']");
+    const masteringDateInput = document.querySelector("#date-input");
+    const masteringSubmitButton = masteringForm.querySelector(".submit-btn");
+
+    // Helper function to format date
+    function formatDate(dateString) {
+        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const [year, month, day] = dateString.split("-");
+        return `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
+    }
+
+    // Function to handle Recording (Mastering) booking process
+    masteringSubmitButton.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent form submission
+
+        // Get input values
+        const masteringOption = masteringDropdown.value;
+        const note = noteInput.value.trim(); // Optional
+        const bookingDate = masteringDateInput.value;
+
+        // Initialize error messages array
+        let errorMessages = [];
+
+        // Validate required fields
+        if (!bookingDate) {
+            errorMessages.push("tanggal");
+        }
+        if (!masteringOption) {
+            errorMessages.push("opsi mastering");
+        }
+
+        // If there are any validation errors, combine and show them
+        if (errorMessages.length > 0) {
+            let message = "Harap isi ";
+            message += errorMessages.join(", ");
+            message += " terlebih dahulu sebelum melanjutkan.";
+            alert(message);
+            return;
+        }
+
+        const formattedDate = formatDate(bookingDate); // Format the date
+
+        // Format WhatsApp message
+        let message = `
+*Halo kak Joel, saya ingin booking studio untuk ${masteringOption}:*
+*Untuk tanggal: ${formattedDate}`;
+
+        // Append note if provided
+        if (note) {
+            message += `\n*Catatan tambahan: ${note}*`;
+        }
+
+        message += "\n\nApakah waktu tersebut tersedia?";
+
+        // Send message to WhatsApp
+        const whatsappURL = `https://wa.me/628991601137?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const masteringForm = document.getElementById("mastering-form");
+    const masteringDropdown = masteringForm.querySelector("select");
+    const noteInput = masteringForm.querySelector("input[type='text']");
+    const masteringDateInput = document.querySelector("#date-input");
+    const masteringSubmitButton = masteringForm.querySelector(".submit-btn");
+
+    // Function to handle Recording (Mastering) booking process
+    masteringSubmitButton.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent form submission
+
+        // Get input values
+        const masteringOption = masteringDropdown.value;
+        const note = noteInput.value.trim(); // Optional
+        const bookingDate = masteringDateInput.value;
+
+        // Initialize error messages array
+        let errorMessages = [];
+
+        // Validate required fields
+        if (!bookingDate) {
+            errorMessages.push("tanggal");
+        }
+        if (!masteringOption) {
+            errorMessages.push("opsi mastering");
+        }
+
+        // If there are any validation errors, combine and show them
+        if (errorMessages.length > 0) {
+            let message = "Harap isi ";
+            message += errorMessages.join(", ");
+            message += " terlebih dahulu sebelum melanjutkan.";
+            alert(message);
+            return;
+        }
+
+        // Format WhatsApp message
+        let message = `
+*Halo kak Joel, saya ingin booking studio untuk ${masteringOption}:*
+*Untuk tanggal: ${bookingDate}`;
+
+        // Append note if provided
+        if (note) {
+            message += `\n*Catatan tambahan: ${note}*`;
+        }
+
+        message += "\n\nApakah waktu tersebut tersedia?";
+
+        // Send message to WhatsApp
+        const whatsappURL = `https://wa.me/628991601137?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+    });
+});
+
 
 
 
