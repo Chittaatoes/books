@@ -1055,8 +1055,6 @@ button.active {
 }
 
 .illustration {
-    width: 80%; /* Ensures the image takes up 100% width of the container */
-    height: auto;
     margin-bottom: 30px; /* Adds space below the image */
     filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.5));
     animation: zoomIn 1.5s ease-out; /* Apply zoom-in animation */
