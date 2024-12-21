@@ -3,17 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Course Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Joel Music Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--     <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star-half-alt"></i>
+    -->
 </head>
 <body>
-    <div class="welcome">
-        <img src="img/vector/guitar.png" alt="Illustration" class="illustration">
-        <div class="title">Discover Your Perfect Sound Space</div>
-        <div class="description">
-            Find the ideal studio to create, rehearse, or record your music. Crafted with passion and precision to bring your vision to life
+    <div class="container">
+        <header>
+            <div class="icons">
+                <img src="img/icon/menu.png" alt="Menu">
+            </div>
+            <h2>HOME</h2>
+            <div class="icons">
+                <img src="img/icon/profil.png" alt="Notifications">
+            </div>
+        </header>
+    
+        <div class="welcome">
+            <h1>Welcome <span>👋</span></h1>
+            <p>Joel Music Studio – the perfect place to bring your musical vision to life.</p>
         </div>
-        <a href="book.html" class="button">Let's Roll</a>
+
     </div>
+        
+        <div class="konten">
+            
+            <div class="opening-hours">
+                <p id="opening-status">Open, 09:00 AM - 23:00 PM</p>
+            </div>
+            
+
+            <div class="group">
+                <div class="card card-left">
+                    <div class="card-header">
+                        <!-- Customer Icon -->
+                        <div class="customer-icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h2>More than 50+ Real Customers</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Animated number of customers -->
+                        <div class="customer-count">
+                            <span id="customer-number">0</span>+
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="card card-right-top">
+                    <div class="card-header">
+                        <div class="customer-icon">
+                            <img src="img/icon/good-review.png" alt="Customer Icon">
+                        </div>
+                        <h3>Receiving positive feedback from visitors</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="star-rating">
+                            <span class="star" id="star-1">☆</span>
+                            <span class="star" id="star-2">☆</span>
+                            <span class="star" id="star-3">☆</span>
+                            <span class="star" id="star-4">☆</span>
+                            <span class="star" id="star-5">☆</span>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="card card-right-bottom">
+                    <div class="card-header">
+                        <div class="customer-icon">
+                            <img src="img/icon/price.png" alt="Customer Icon">
+                        </div>
+                        <h3>Offering the lowest price among competitors.</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="star-rating">
+                            <span class="money" id="money-1"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <section class="hero-section">
+                    <img src="img/vector/guitar.png" alt="Illustration" class="illustration">
+                    <h1 class="hero-title">Discover Your Perfect Sound Space</h1>
+                    <p class="hero-text">Temukan studio ideal untuk menciptakan, berlatih, atau merekam musik anda. Dirancang dengan penuh dedikasi dan presisi untuk mewujudkan visi Anda.</p>
+                    <a href="#booking" class="cta-button">Pelajari Lebih Lanjut</a>
+                </section>
+            </div>
+            
+            <div class="block">
+                <div class="fasilitas-container">
+                    <h3>Fasilitas yang Didapat</h3>
+                    <ul class="fasilitas-list">
+                        <li><i class="fa fa-drum"></i> Drum Elektrik</li>
+                        <li><i class="fa fa-keyboard"></i> Keyboard</li>
+                        <li><i class="fa fa-guitar"></i> Gitar 1</li>
+                        <li><i class="fa fa-guitar"></i> Gitar 2</li>
+                        <li><i class="fa fa-guitar"></i> Bass</li>
+                        <li><i class="fa fa-drum"></i> Cajon</li> <!-- Cajon icon -->
+                        <li><i class="fa fa-music"></i> Tamborin</li> <!-- Tamborin icon -->
+                        <li><i class="fa fa-building"></i> AC</li>
+                        <li><i class="fa fa-wifi"></i> Free Wifi</li>
+                        <li><i class="fa fa-toilet"></i> Toilet</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            
+            
+            <!-- <div class="music-player-container">
+                <div class="music-player">
+                    <div class="player-header">
+                        <h1>Joel Music Project</h1>
+                    </div>
+                    <div class="player-body">
+                        <div class="track-info">
+                            <p id="track-name">TRAUMA - ELSYA FEAT AAN STORY | COVER BY MUHAMMAD FAHREZA HAFIDZ</p>
+                            <p id="artist-name">Artist Name</p>
+                        </div>
+                        <div class="player-controls">
+                            <button class="prev" id="prev-btn"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                            <button class="play-pause" id="play-btn"><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <button class="next" id="next-btn"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+                        </div>
+                        <input type="range" id="seek-bar" value="0" max="100">
+                    </div>
+                </div>
+            </div> -->
+            
+            
+
+
+            <div class="carousel-container">
+                <h2>Customer Reviews</h2>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Tempatnya nyaman bersih ruangan ber ac, pelayanannya oke abangnya ramah, harga murah bisa diadu sama tempat lain, dateng main tinggal genjreng."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Hepy Raf Sanjaya</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"tempat nya oke dan nyaman, alat alatnya bagus dan lengkap banget, dijamin puas euy, main disini pokonya tinggal genjreng, semuanya udah disiapin, poll pokona mah, SLEBEWW!!!"</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Audrich Dena Putra</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Sangat recommended tempat yang nyaman dan overall mantappppp."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- OUR SELF_ BAND OFFICIAL</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"Pelayanan ramah & friendly. Kerenn tempatnya untuk latihannn, take video & recording sangat worth it👍🏻 "</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Angga Satrio Ramadhan</p>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Studio ekonomis terjangkau.. Kualitas ga murahan.. Mantaaap."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5.0/5)</span>
+                                </div>
+                                <p class="review-author">- Siahaan Jr</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"Tempat nyaman, soundnya mantep. "</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- novaldysama</p>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Studio nyaman, asik untuk recording dan pelayanan ramah, gokil abis."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5.0/5)</span>
+                                </div>
+                                <p class="review-author">- Jaenal Abidin Jr</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"Tempat nyaman, alat record lengkap, mantap pokonya."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Muhammad Fikri Ihsan</p>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Rekomen banget buat Karaokean Nyaman banget"</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5.0/5)</span>
+                                </div>
+                                <p class="review-author">- Aay surya</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"Terima kasih sebesar-besarnya dan sukses selalu untuk Joel Music Studio."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Sandika Madya Akbar</p> 
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="carousel-slide">
+                            <div class="review">
+                                <p class="review-text">"Harga ekonomis kualitas buat latihan main band menjadi lebih asik"</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5.0/5)</span>
+                                </div>
+                                <p class="review-author">- Cipta Kettler</p>
+                            </div>
+                            <div class="review">
+                                <p class="review-text">"Studio musik perum 2. Alat musiknya bagus, cocok untuk Jaming jaming."</p>
+                                <div class="review-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-number">(5/5)</span>
+                                </div>
+                                <p class="review-author">- Robbal Mohhan</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="customer-gallery-container">
+                <h2>Customer Gallery</h2>
+                <div class="customer-carousel">
+                    <div class="customer-carousel-track">
+                        <!-- Slide pertama -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/sounday.jpg" alt="Customer 1">
+                                <p>Sounday Live Record</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/bcbh.jpg" alt="Customer 2">
+                                <p>BCBH Rehearsal</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/angga.jpg" alt="Customer 3">
+                                <p>Angga Ramadhan</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/man1.jpg" alt="Customer 4">
+                                <p>Man 1 Kota Tangerang</p>
+                            </div>
+                        </div>
+                        <!-- Slide kedua -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/Mhdilwan07.jpg" alt="Customer 5">
+                                <p>Mhdilwan07 Minusone drum</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/tumnband-ngeband (1).jpg" alt="Customer 6">
+                                <p>Tumband Ngeband</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/deriversax (1).jpg" alt="Customer 7">
+                                <p>De River Sax</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/gradasiband.jpg" alt="Customer 8">
+                                <p>Gradasi Band</p>
+                            </div>
+                        </div>
+                        <!-- Slide ketiga (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/coronstation.jpg" alt="Customer 9">
+                                <p>Coronstation</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/voltisband.jpg" alt="Customer 10">
+                                <p>Voltis Band Rehearsal</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/blueband.jpg" alt="Customer 11">
+                                <p>Blue Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/hacep.jpg" alt="Customer 12">
+                                <p>Hacep Brother</p>
+                            </div>
+                        </div>
+                        <!-- Slide keempat (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/nemesician.jpg" alt="Customer 9">
+                                <p>Nemesician</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/attoband.jpg" alt="Customer 10">
+                                <p>Atto Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/nowhereman.jpg" alt="Customer 11">
+                                <p>Nowhere Man</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/weeklyband.jpg" alt="Customer 12">
+                                <p>Weekly Band</p>
+                            </div>
+                        </div>
+                        <!-- Slide keempat (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/7s band.jpg" alt="Customer 9">
+                                <p>7S Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/treets band.jpg" alt="Customer 10">
+                                <p>Treet's Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/berusut.jpg" alt="Customer 11">
+                                <p>Berusut Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/davinci.jpg" alt="Customer 12">
+                                <p>Davinci Band</p>
+                            </div>
+                        </div>
+                        <!-- Slide keempat (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/mes3.jpg" alt="Customer 9">
+                                <p>Mes3 Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/silet.jpg" alt="Customer 10">
+                                <p>Silet's Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/theijuns.jpg" alt="Customer 11">
+                                <p>The Ijun's</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/newclear.jpg" alt="Customer 12">
+                                <p>New Clear Band</p>
+                            </div>
+                        </div>
+                        <!-- Slide keempat (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/opet.jpg" alt="Customer 9">
+                                <p>Opet Marsyaff</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/rizkipadilahts.jpg" alt="Customer 10">
+                                <p>RizkiPadilahts Minusone Gitar</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/flyband.jpg" alt="Customer 11">
+                                <p>Fly Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/jokyjek.jpg" alt="Customer 12">
+                                <p>Jokyjek Band</p>
+                            </div>
+                        </div>
+                        <!-- Slide keempat (bisa ditambah sesuai kebutuhan) -->
+                        <div class="customer-carousel-slide">
+                            <div class="customer-gallery-item">
+                                <img src="gallery/thebasher.jpg" alt="Customer 9">
+                                <p>The Basher</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/treets.jpg" alt="Customer 10">
+                                <p>Treets Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="gallery/j-nineteen.jpg" alt="Customer 11">
+                                <p>J-nineteen Band</p>
+                            </div>
+                            <div class="customer-gallery-item">
+                                <img src="img/vector/guitar.png" alt="Customer 12">
+                                <p>Band</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="pricing-table">
+                <h3>Price List</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Layanan</th>
+                            <th>Durasi</th>
+                            <th>Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rehearsal</td>
+                            <td>/ Jam</td>
+                            <td>Rp60.000</td>
+                        </tr>
+                        <tr>
+                            <td>Minus One Drum</td>
+                            <td>/ Jam</td>
+                            <td>Rp50.000</td>
+                        </tr>
+                        <tr>
+                            <td>Minus One Gitar</td>
+                            <td>/ Jam</td>
+                            <td>Rp50.000</td>
+                        </tr>
+                        <tr>
+                            <td>Karaoke</td>
+                            <td>/ Jam</td>
+                            <td>Rp55.000</td>
+                        </tr>
+                        <tr>
+                            <td>Take Vocal</td>
+                            <td>/ 2 Jam</td>
+                            <td>Rp200.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cover Lagu Minusone</td>
+                            <td>One Session</td>
+                            <td>Rp300.000</td>
+                        </tr>
+                        <tr>
+                            <td>Live Record</td>
+                            <td>/ Song</td>
+                            <td>Rp80.000</td>
+                        </tr>
+                        <tr>
+                            <td>Track</td>
+                            <td>/ Shift <hr>(6 Jam)</td>
+                            <td>Rp500.000</td>
+                        </tr>
+                        <tr>
+                            <td>Mixing Mastering</td>
+                            <td>/ Song</td>
+                            <td>Rp250.000</td>
+                        </tr>
+                        <tr>
+                            <td>Take Video</td>
+                            <td>/ Session</td>
+                            <td>Rp200.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+
+                    <div class="booking-form">
+                        <h2>Choose your session</h2>
+                        <div class="button-group">
+                            <button class="active" id="rehearsal-btn">Rehearsal</button>
+                            <button id="mastering-btn">Recording</button>
+                        </div>
+                    
+                        <!-- Dropdown for Rehearsal options (shown for Rehearsal only) -->
+                        <select id="rehearsal-dropdown" style="display: none;">
+                            <option>Rehearsal</option>
+                            <option>Rehearsal minus one drum</option>
+                            <option>Rehearsal minus one guitar</option>
+                            <option>Karaoke</option>
+                        </select>
+                    
+                        <!-- Dropdown for Rehearsal Time (shown for Rehearsal only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 60.000)</option>
+                            <option>2 Jam (Rp 120.000)</option>
+                            <option>3 Jam (Rp 170.000)</option>
+                            <option>4 Jam (Rp 240.000)</option>
+                            <option>5 Jam (Rp 300.000)</option>
+                        </select>
+
+                        <!-- Dropdown minusone drum (shown for minus one drum only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 50.000)</option>
+                            <option>2 Jam (Rp 100.000)</option>
+                            <option>3 Jam (Rp 150.000)</option>
+                        </select>
+
+                        <!-- Dropdown minusone gitar (shown for minus one gitar only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 50.000)</option>
+                            <option>2 Jam (Rp 100.000)</option>
+                            <option>3 Jam (Rp 150.000)</option>
+                        </select>
+                
+                        <!-- Dropdown karaoke (shown for karaoke only) -->
+                        <select id="time-dropdown" style="display: none;">
+                            <option>1 Jam (Rp 55.000)</option>
+                            <option>2 Jam (Rp 110.000)</option>
+                            <option>3 Jam (Rp 160.000)</option>
+                        </select>
+
+                        <!-- Textbox for Band Name (shown for Rehearsal only) -->
+                        <input type="text" id="band-name" placeholder="Nama (Band)" style="display: none;">
+                        
+                        <h4>pick your date</h4>
+
+                        <!-- Date Input -->
+                        <input type="date" id="date-input" placeholder="Pilih tanggal book">
+                    
+                        <!-- Rehearsal Form (to be shown only when Rehearsal is selected) -->
+                        <form id="rehearsal-form">
+                            <div class="time-group" id="time-group" style="display: none;">
+                                <button>09:00</button>
+                                <button>09:30</button>
+                                <button>10:00</button>
+                                <button>10:30</button>
+                                <button>11:00</button>
+                                <button>11:30</button>
+                                <button>12:00</button>
+                                <button>12:30</button>
+                                <button>13:00</button>
+                                <button>13:30</button>
+                                <button>14:00</button>
+                                <button>14:30</button>
+                                <button>15:00</button>
+                                <button>15:30</button>
+                                <button>16:00</button>
+                                <button>16:30</button>
+                                <button>17:00</button>
+                                <button>17:30</button>
+                                <button>18:00</button>
+                                <button>18:30</button>
+                                <button>19:00</button>
+                                <button>19:30</button>
+                                <button>20:00</button>
+                                <button>20:30</button>
+                                <button>21:00</button>
+                                <button>21:30</button>
+                                <button>22:00</button>
+                                <button>22:30</button>
+                                <button>23:00</button>
+                            </div>
+                    
+                            <!-- Dropdown for Group Size (only for Rehearsal) -->
+                            <select>
+                                <option>1 - 2 orang</option>
+                                <option>3 - 5 orang</option>
+                                <option>6 - 7 orang</option>
+                            </select>
+                    
+                            <button type="submit" class="submit-btn">Book Now</button>
+                        </form>
+                    
+                        <!-- Mastering Form (to be shown only when Mastering is selected) -->
+                        <form id="mastering-form" style="display:none;">
+                    
+                            <!-- Dropdown for Mastering Options -->
+                            <select>
+                                <option>Take vocal (200K / 2 Jam)</option>
+                                <option>Cover Lagu Minus One (300K)</option>
+                                <option>Live Record 80K / Lagu</option>
+                                <option>Track 500K / 1 Shift (6 Jam)</option>
+                                <option>Mixing mastering 250k</option>
+                                <option>Take video 200K</option>
+                            </select>
+
+                            <!-- Textbox for Additional Info -->
+                            <input type="text" placeholder="Catatan">
+                    
+                            <button type="submit" class="submit-btn">Book Now</button>
+                        </form>
+                    </div>
+
+
+                    <div class="maps-container">
+                        <h3>Lokasi Studio</h3>
+                        <p>Joel Music Studio & Recording</p>
+                        <p>Gg. Mede 2 No.256, RT.004/RW.001, Bencongan Indah, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15811</p>
+                        <div class="maps-image">
+                            <a 
+                                href="https://www.google.com/maps/dir/?api=1&destination=Gg.+Mede+2+No.256,+Bencongan+Indah,+Kec.+Klp.+Dua,+Kabupaten+Tangerang,+Banten+15811" 
+                                target="_blank"
+                            >
+                                <img 
+                                    src="https://maps.googleapis.com/maps/api/staticmap?center=-6.230125,106.591720&zoom=15&size=600x300&markers=color:red%7Clabel:J%7C-6.230125,106.591720&key=YOUR_API_KEY" 
+                                    alt="Joel Music Studio Location" 
+                                />
+                            </a>
+                        </div>
+                        <a 
+                            href="https://www.google.com/maps/dir/?api=1&destination=Gg.+Mede+2+No.256,+Bencongan+Indah,+Kec.+Klp.+Dua,+Kabupaten+Tangerang,+Banten+15811" 
+                            target="_blank" 
+                            class="direction-button"
+                        >
+                            Dapatkan Arah
+                        </a>
+                    </div>
+                    
+
+                    <!-- HTML -->
+                    <!-- <div class="equipment-marketplace">
+                        <div class="equipment-item">
+                            <i class="fa fa-plug" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Kabel</p>
+                            <p class="equipment-item-price">Rp 50.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-drum" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Drum Nux DM7</p>
+                            <p class="equipment-item-price">Rp 500.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-guitar" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Efek Gitar Joyo Gembox 2G</p>
+                            <p class="equipment-item-price">Rp 200.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                        <div class="equipment-item">
+                            <i class="fa fa-guitar" aria-hidden="true"></i>
+                            <p class="equipment-item-name">Efek Gitar Vox Stomplab 2G</p>
+                            <p class="equipment-item-price">Rp 200.000 / Sesi</p>
+                            <button class="rent-now-btn">Sewa</button>
+                        </div>
+                    </div> -->
+
+
+                    
+                    
+        </div>
+
+        
+        
+    <script src="script.js"></script>
 </body>
 </html>
